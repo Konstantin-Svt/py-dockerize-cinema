@@ -11,11 +11,11 @@ class Command(BaseCommand):
             self.stdout.write(f"Connecting to DB, try #{i} out of 20:")
             try:
                 conn = psycopg2.connect(
-                    f"dbname={os.environ.get('POSTGRES_DB')} "
-                    f"user={os.environ.get('POSTGRES_USER')} "
-                    f"host={os.environ.get('POSTGRES_HOST')} "
-                    f"password={os.environ.get('POSTGRES_PASSWORD')} "
-                    f"port={os.environ.get('POSTGRES_PORT')}"
+                    f"dbname={os.environ['POSTGRES_DB']} "
+                    f"user={os.environ['POSTGRES_USER']} "
+                    f"host={os.environ['POSTGRES_HOST']} "
+                    f"password={os.environ['POSTGRES_PASSWORD']} "
+                    f"port={os.environ['POSTGRES_PORT']}"
                 )
                 conn.close()
                 self.stdout.write("Connected to DB successfully")

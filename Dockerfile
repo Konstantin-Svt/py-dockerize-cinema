@@ -9,14 +9,14 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-RUN mkdir -p app/media
+RUN mkdir -p media
 
 RUN adduser \
     --disabled-password \
     --no-create-home \
     secret-user
 
-RUN chown -R secret-user app/media
-RUN chmod -R 755 app/media
+RUN chown -R secret-user media
+RUN chmod -R 755 media
 
 USER secret-user
